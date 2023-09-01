@@ -36,10 +36,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicGo-Setup-$version-x64.exe#/dl.7z"
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicList-Setup-$version-x64.exe#/dl.7z"
             },
             "32bit": {
-                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicGo-Setup-$version-ia32.exe#/dl.7z"
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicList-Setup-$version-ia32.exe#/dl.7z"
             }
         },
         "hash": {
