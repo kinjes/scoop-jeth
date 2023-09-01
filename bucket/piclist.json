@@ -1,0 +1,50 @@
+{
+    "version": "2.5.1",
+    "description": "An image upload and manage tool, base on PicGo",
+    "homepage": "https://piclist.cn",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Kuingsmile/PicList/releases/download/v2.5.1/PicList-Setup-2.5.1-x64.exe#/dl.7z",
+            "hash": "sha512:9C7EEAD273FDB71EE3780598E9EFC3F3AE1934986D8AC62635A6BF65DC3582C3CCC4EDFA896FA0533AB082811DFF935A45E24B303BBBE57A292043482320602D",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/Kuingsmile/PicList/releases/download/v2.5.1/PicList-Setup-2.5.1-ia32.exe#/dl.7z",
+            "hash": "sha512:F50D94D058A94560627E2D81EEDB3147BA428E9059057FB72EC164AFFEB26BBD4BDE2F24B26520EED3C1FA7BF01C0EC92DB2AF3C09D06071A52CC7E5275E85CC",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
+            ]
+        }
+    },
+    "bin": "PicList.exe",
+    "shortcuts": [
+        [
+            "PicList.exe",
+            "PicList"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/Kuingsmile/PicList/releases",
+        "jsonpath": "$[0].tag_name",
+        "regex": "(?<tag>v([\\w.-]+))"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicGo-Setup-$version-x64.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/Kuingsmile/PicList/releases/download/$matchTag/PicGo-Setup-$version-ia32.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "(?s)$basename.*?$base64"
+        }
+    }
+}
