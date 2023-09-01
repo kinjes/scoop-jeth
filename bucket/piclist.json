@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Kuingsmile/PicList/releases/download/v2.5.1/PicList-Setup-2.5.1-x64.exe#/dl.7z",
-            "hash": "sha512:9C7EEAD273FDB71EE3780598E9EFC3F3AE1934986D8AC62635A6BF65DC3582C3CCC4EDFA896FA0533AB082811DFF935A45E24B303BBBE57A292043482320602D",
+            "hash": "sha512:14f40ea3398752103c8b8460b3394a61cb0dd908c4c17f24c6b874d9555e5301eff606cdad64ca00525f925d3c6d7fb50fa08960ffba0ff397dc1a475891b7cc",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
